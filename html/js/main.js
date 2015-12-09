@@ -7,7 +7,7 @@ $(function(){
             var sawIndex = function getRandomInt(min, max) {
                 return Math.floor(Math.random() * (max - min)) + min;
             };
-            chainsaws[sawIndex(0,3)].css("display", "block");
+            chainsaws[sawIndex(0,2)].css("display", "block");
         },
         unglow = function(){
             $chainsaw.attr("class","chainsaw-icon");
@@ -20,7 +20,7 @@ $(function(){
 
     pickChainsaw();
 
-    $('svg.chainsaw-icon path').hover(
+    $('svg.chainsaw-icon').hover(
         function(){
             glow();
         },

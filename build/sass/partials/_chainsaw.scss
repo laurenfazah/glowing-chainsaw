@@ -21,7 +21,7 @@
         display: block;
         margin: 0 auto;
         margin-top: 5vh;
-        @include transition(all .3s ease-in-out);
+        @include transition(all .2s ease-in-out);
         &.glowing{
             margin-top: none;
             height: 100vh;
