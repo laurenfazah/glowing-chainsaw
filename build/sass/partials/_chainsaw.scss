@@ -12,22 +12,25 @@
     100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
 }
 
-.chainsaw-icon{
-    fill: $dark;
-    height: 95vh;
-    width: auto;
-    display: block;
-    margin: 0 auto;
-    margin-top: 5vh;
-    @include transition(all .3s ease-in-out);
-    &.glowing{
-        margin-top: none;
-        height: 100vh;
-        fill: #AAF200;
-        -webkit-animation-name: spaceboots;
-        -webkit-animation-duration: 0.8s;
-        -webkit-transform-origin:50% 50%;
-        -webkit-animation-iteration-count: infinite;
-        -webkit-animation-timing-function: linear;
+.chainsaw{
+    display: none;
+    .chainsaw-icon{
+        fill: $dark;
+        height: 95vh;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+        margin-top: 5vh;
+        @include transition(all .3s ease-in-out);
+        &.glowing{
+            margin-top: none;
+            height: 100vh;
+            fill: #AAF200;
+            -webkit-animation-name: spaceboots;
+            -webkit-animation-duration: 0.8s;
+            -webkit-transform-origin:50% 50%;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
     }
 }
