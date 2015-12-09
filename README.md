@@ -1,7 +1,3 @@
-#
+#glowing-chainsaw
 
-## let's do work
-1.  only edit build/* assets
-2.  npm install grunt
-3.  npm install
-4.  grunt watch
+##[This tweet](https://twitter.com/OldManKris/status/673184195485790208) presented the game of creating a randomly named github repository and creating something based off of that name. I present you with "glowing-chainsaw"
