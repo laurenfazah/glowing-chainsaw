@@ -1,27 +1,31 @@
 $(function(){
     $chainsaw = $('svg.chainsaw-icon');
+    $audio = document.getElementById("player-audio");
 
-    var count = 0,
-        chainsaws = [$('.chainsaw.one'), $('.chainsaw.two'), $('.chainsaw.three')],
+    var chainsaws = [$('.chainsaw.one'), $('.chainsaw.two'), $('.chainsaw.three')],
         pickChainsaw = function(){
             var sawIndex = function getRandomInt(min, max) {
                 return Math.floor(Math.random() * (max - min)) + min;
             };
             chainsaws[sawIndex(0,3)].css("display", "block");
         },
+        unglow = function(){
+            $chainsaw.attr("class","chainsaw-icon");
+            $audio.pause();
+        },
         glow = function(){
-            if (count%2===0){
-                $chainsaw.attr("class","chainsaw-icon");
-            } else {
-                $chainsaw.attr("class","chainsaw-icon glowing");
-            }
-            count++;
+            $chainsaw.attr("class","chainsaw-icon glowing");
+            $audio.play();
         };
 
     pickChainsaw();
-    glow();
 
-    setInterval(function(){
-        glow();
-    }, 1500);
+    $('svg.chainsaw-icon path').hover(
+        function(){
+            glow();
+        },
+        function(){
+            unglow();
+        }
+    );
 });
