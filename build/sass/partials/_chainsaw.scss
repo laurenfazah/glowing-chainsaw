@@ -1,3 +1,4 @@
+$glowgreen: #AAF200;
 @-webkit-keyframes spaceboots {
     0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
     10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
@@ -12,11 +13,23 @@
     100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
 }
 
+h1{
+    text-align: center;
+    font-size: 4em;
+    margin: 3vh auto;
+    span.letter{
+        @extend %default-transition;
+        &.glow{
+            color: $glowgreen;
+        }
+    }
+}
+
 .chainsaw{
     display: none;
     .chainsaw-icon{
         fill: $dark;
-        height: 95vh;
+        height: 92vh;
         width: auto;
         max-width: 100%;
         display: block;
@@ -26,7 +39,7 @@
         &.glowing{
             margin-top: none;
             height: 100vh;
-            fill: #AAF200;
+            fill: $glowgreen;
             -webkit-animation-name: spaceboots;
             -webkit-animation-duration: 0.8s;
             -webkit-transform-origin:50% 50%;

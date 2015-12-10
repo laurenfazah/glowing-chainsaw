@@ -20,8 +20,8 @@ $(function(){
 
     pickChainsaw();
 
+    // chainsaw glow
     var mobileCount = 0;
-
     if ($('html').hasClass('no-touch')) {
         $('svg.chainsaw-icon').hover(
             function(){
@@ -42,4 +42,23 @@ $(function(){
         });
     }
 
+    // h1 glow
+    var letters = $('.letter');
+
+    var glowLetters = function(i){
+        var last = i - 1,
+            nextLetter = $('.letter.'+i),
+            lastLetter = $('.letter.'+last);
+        nextLetter.addClass('glow');
+        lastLetter.removeClass('glow');
+    };
+
+    var i = 0;
+    setInterval(function() {
+        glowLetters(i);
+        i++;
+        if (i > letters.length){
+            i = 0;
+        }
+    }, 330);
 });
